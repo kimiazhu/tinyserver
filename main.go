@@ -11,11 +11,9 @@ import (
 func main() {
 	g := ginweb.New()
 
-	g.Use(func(c *gin.Context){
-		c.H
-	}).Static("/", "")
-
-	g.StaticFile("/", "");
+	//application/octet-stream
+	g.StaticFS("/", gin.Dir("", true))
 
 	ginweb.Run(conf.Conf.SERVER.PORT, g)
 }
+

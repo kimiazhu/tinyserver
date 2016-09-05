@@ -5,7 +5,7 @@
     <level>ACCESS</level>
     <exclude>github.com/xgsdk2/betatest/tako.lib/mgox</exclude>
   </filter>
-  <filter enabled="false">
+  <filter enabled="true">
     <tag>access</tag> <!-- the tag of accesslog MUST be access -->
     <type>file</type>
     <level>ACCESS</level><!-- the level of accesslog MUST be access -->
@@ -16,7 +16,7 @@
     <property name="maxlines">100K</property>
     <property name="daily">true</property>
   </filter>
-  <filter enabled="false">
+  <filter enabled="true">
     <tag>file_finest</tag>
     <type>file</type>
     <!-- level is (:?FINEST|FINE|DEBUG|TRACE|INFO|WARNING|ERROR) -->
@@ -51,7 +51,7 @@
     <property name="maxlines">100K</property>
     <property name="daily">true</property>
   </filter>
-  <filter enabled="false">
+  <filter enabled="true">
     <tag>file_error</tag>
     <type>file</type>
     <level>ERROR</level>
