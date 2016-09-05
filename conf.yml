@@ -1,0 +1,9 @@
+# this is a template conf.yml file,
+# you need to redefine your own file under
+# project's root
+server:
+  runmode: debug #or debug/test/release
+  port: 8888
+
+ext:
+  versionName: "1.0.0"
