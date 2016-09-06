@@ -7,3 +7,5 @@ server:
 
 ext:
   versionName: "1.0.0"
+  versionNumber: 0.1
+

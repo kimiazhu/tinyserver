@@ -10,8 +10,18 @@ package fs
 
 import (
 	"net/http"
+	"github.com/gin-gonic/gin"
+	"github.com/kimiazhu/tinyserver/model"
 )
 
-func Static(relativePath string, fs http.FileSystem) {
-
+func ServeStatic(root string) func(*gin.Context) {
+	return func(c *gin.Context) {
+		fs := http.FileServer(http.Dir(root))
+		if model.Config.Mode == model.DOWNLOAD_MODE {
+			c.Writer.Header().Add("Content-Type", "application/octet-stream")
+		}
+		fs.ServeHTTP(c.Writer, c.Request)
+	}
 }
+
+
