@@ -9,11 +9,12 @@ import (
 )
 
 func main() {
-	g := ginweb.New()
+	g := ginweb.NewGinweb()
 
 	//g.GET("/*filepath", fs.ServeStatic(""))
 	//g.GET("/", fs.ServeStatic(""))
 	g.GET("/*filepath", fs.ServeFile(""))
-	ginweb.Run(conf.Conf.SERVER.PORT, g)
+
+	g.Run(conf.Conf.SERVER.PORT)
 }
 
